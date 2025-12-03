@@ -1,18 +1,18 @@
 #Python/Arrays/0001_Two_Sum/solution.py
-from typing import List, Optional
+from typing import List
 
-def TwoSum(nums: List[int], target: int) -> Optional[List[int]]:
-    num_map = {}
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        num_map = {}
 
-    for i, num in enumerate(nums):
-        complement = target - num
+        for i, num in enumerate(nums):
+            complement = target - num
 
-        if complement in num_map:
-            return [num_map[complement], i]
-        
-        num_map[num] = i
-
-    return None
+            if complement in num_map:
+                return [num_map[complement], i]
+            
+            num_map[num] = i
 
 if __name__ == "__main__":
-    print(TwoSum([2, 7, 11, 15], 9))
+    solver = Solution()
+    print(solver.twoSum([2, 7, 11, 15], 9))
