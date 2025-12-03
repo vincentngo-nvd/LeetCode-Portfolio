@@ -1,16 +1,20 @@
 # 0001 - Two Sum
 
-## 💡 Approach: Using a Hash Map (Two-pass/One-pass)
+## Idea: Using a Hash Map for Speed
 
-The most efficient solution utilizes a **Hash Map** to store the numbers we have already iterated through along with their **index**.
+This problem asks us to find two numbers that sum up to a specific target.
 
-For each number $num$ in the array, we calculate the required **complement**:
-$$complement = target - num$$
+### Approach Summary
 
-1.  **Check:** We check if the $complement$ already exists in the Hash Map. If it does, we have found the pair and return their indices: $[hash\_map[complement], current\_index]$.
-2.  **Store:** If the complement is not found, we add the current $num$ and its index $i$ to the Hash Map: $hash\_map[num] = i$.
+The brute-force method (checking every pair of numbers) is too slow ($O(N^2)$). To solve it efficiently, I used a **Hash Map** (Python Dictionary) in a single pass.
 
-## ⏱ Complexity Analysis (Optimal Solution)
+1.  **Why Hash Map?** Hash Maps provide **very fast lookup time** ($O(1)$). This allows us to search for the required number instantly.
+2.  **How it works:** As I iterate through the list, for each number (let's call it $X$), I calculate the required partner number, or **Complement** (which is $Target - X$).
+3.  **Check and Store:**
+    * I check if the **Complement** is already in the Hash Map. If it is, I found the solution and return the indices.
+    * If not, I store the current number $X$ and its index in the Hash Map for future checks.
 
-* **Time Complexity:** $O(N)$ - We iterate through the list only once. Hash Map lookups and insertions take an average $O(1)$ time.
-* **Space Complexity:** $O(N)$ - In the worst-case scenario, the Hash Map will store all $N$ elements.
+## Complexity
+
+* **Time Complexity:** $O(N)$. I only need to iterate through the array once.
+* **Space Complexity:** $O(N)$, as the Hash Map might store all elements in the worst case.
