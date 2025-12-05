@@ -1,4 +1,4 @@
-#Python/Arrays/0001_Two_Sum/solution.py
+#Python/Arrays/0001_Two_Sum
 from typing import List
 
 class Solution:
