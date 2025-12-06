@@ -18,5 +18,5 @@ class Solution:
 if __name__ == "__main__":
     solver = Solution()
     print(solver.lengthOfLongestSubstring("abcabcbb"))
-    print(solver.lengthOfLongestSubstring("bbbbb"))
+    print(solver.lengthOfLongestSubstring("bbbbbb"))
     print(solver.lengthOfLongestSubstring("pwwkew"))
