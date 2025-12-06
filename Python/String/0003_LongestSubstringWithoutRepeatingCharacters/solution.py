@@ -1,18 +1,16 @@
 #Python/String/0003_LongestSubstringWithoutRepeatingCharacters
-from typing import Set
-
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
-        charSet: Set[str] = set()
+        char_set = set()
         l = 0
         max_len = 0
 
         for r in range(len(s)):
-            while s[r] in charSet:
-                charSet.remove(s[l])
+            while s[r] in char_set:
+                char_set.remove(s[l])
                 l += 1
             
-            charSet.add(s[r])
+            char_set.add(s[r])
             max_len = max(max_len, r - l + 1)
             
         return max_len
